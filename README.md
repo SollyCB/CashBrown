@@ -2,7 +2,7 @@
 
 **This was implemented largely as the baby steps towards some Vulkan engine shizzle, I am convinced that the implementation is decent and works well (as it is simply a port) but it has not been extensively tested and there is one loop that I imagine could run faster (maybe) with benchmarking. It is not heavily benchmarked to check each piece of the implementation, but it is basically a one to one port, so I doubt it is digustingly wrong (I am a noob, and this is not heavily tested, so I could be wrong). I just wanted this out there because I am pleased with this, I would welcome review and criticism. There is only basic functionality: you can insert, get, and the map rehashes and grows if it has insufficient space. I think basically everything else builds on these primitives.**
 
-It also uses a custom allocator (custom is an overstatement, really just a wrapper around Matthew Conte's tlsf C implementation - I wanted TCmalloc but tests failed 
+It also uses a custom allocator (custom is an overstatement, really just a wrapper around [Matthew Conte's](https://github.com/mattconte/tlsf) tlsf C implementation - I wanted TCmalloc but tests failed 
 on my laptop), but this is only used for three mallocs and a free, so a search and replace can be done for std allocator, (not that anyone will ever read this :D). 
 
 I have done basic testing and benchmarking; it behaves as expected, which is sufficient to publish with a warning, (I hope ?). 
